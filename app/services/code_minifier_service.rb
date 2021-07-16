@@ -10,6 +10,7 @@ class CodeMinifierService < ApplicationService
   end
 
   def raw_code(code)
+    binding.pry
     code.nil? ? nil : code[:raw_code]
   end
 end

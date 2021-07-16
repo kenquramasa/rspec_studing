@@ -6,8 +6,4 @@ FactoryBot.define do
       l = m'
     }
   end
-
-  factory :params, class: Code do
-    id { 10 }
-  end
 end

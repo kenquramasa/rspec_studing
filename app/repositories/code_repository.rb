@@ -8,9 +8,7 @@ class CodeRepository < ApplicationRepository
   end
 
   def find_by_id(id)
-    binding.pry
     code.find_by({ id: id })
-    
   end
 
   private
@@ -22,4 +20,4 @@ class CodeRepository < ApplicationRepository
   end
 end
 
-# code.where({id: id})
+# code.where({ id: id })
