@@ -3,6 +3,7 @@ require 'rails_helper'
 describe CodeMinifierService, type: :service do
   context '#call' do
     let(:code_example) { build_stubbed(:code) }
+    let(:raw_code) { code_example[:raw_code] }
     let(:results) { described_class.new.call(code_example) }
     let(:terser_class) { class_double(Terser) }
     let(:terser_instance) { instance_double(Terser) }

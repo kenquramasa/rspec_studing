@@ -1,15 +1,15 @@
 module V1
   class CodeController < ApplicationController
     def index
-      render json: { code: list_code_service.call }
+      render json: list_code_service.call
     end
 
     def create
-      render json: { code: create_code_service.call(code_reader) }
+      render json: create_code_service.call(code_reader)
     end
 
     def show
-      render json: { code: code_minifier_service.call(code_repository.find_by_id(code_id)) }
+      render json: code_minifier_service.call(code_repository.find_by_id(code_id))
     end
 
     private

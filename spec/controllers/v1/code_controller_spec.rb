@@ -36,13 +36,14 @@ RSpec.describe 'CodeControllers', type: :request do
       it 'responds with success' do
         post controller_path, params: { raw_code: js_file }
         expect(response).to have_http_status(:success)
+        expect(response.body).to match_json_schema('v1/code/code')
       end
     end
   end
 
   describe '.show' do
-    context 'when we' do
-      it 'responds with succes' do
+    context 'when controller path correct' do
+      it 'responds with success' do
         get "#{controller_path}/#{id_example}"
         expect(response).to have_http_status(:success)
       end
